@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Weak Lensing</title>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://latex.now.sh/style.css">
+    </head>
+    <body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <h2>Gravitational Lensing</h2>
+      <p>Gravitational lensing is the deflection of light due to mass in the universe creating an inhomogenius gravitational field. The observed deflected light from gravitational lensing is a result of general relativity as light follows a geodesic in a space distorted by the effects of mass. Strong, weak, and micro-lensing are all types of gravitational lensing just under different circumstances of alignment and scale.</p>
+	
+	
+
+<h4>Types of Gravitational Lensing</h4>
+
+<figure><img src="./Screenshot 2022-04-30 180926.png" alt="" srcset="">
+  <figc>Sketch of a gravitational-lens system from <a href="https://arxiv.org/abs/astro-ph/9606001">Narayan and Bartelmann 1999</a></figcaption> Where O is the observer, I is the image location of the object after the deflection and S is the source location.
+</figure>	
+<br>
+	Strong lensing characterizes when a massive foreground lens is aligned close to exactly between an observers line of sight to the object being lensed. Geometrically we can work out the critical surface mass density(\(\Sigma_{cr}\)) of our source, lens, observer system. From this definition we can clearly define a dimensionless quantity called the convergence, \(\kappa\), which is the surface mass density of our lens divided by the critical surface mass density. For \(\kappa \geq  1\) we are in the regime of strong lensing.
+	$$\frac{1}{\Sigma_{cr}} = \frac{4\pi G}{c^2}\frac{D_{L}D_{LS}}{D_{S}}$$
+	
+	$$\kappa = \frac{\Sigma}{\Sigma_{cr}}$$
+	
+	Weak lensing is characterized by the deflection of light when a massive foreground lens isn't necessarily aligned well in the line of sight of a particular object(\(\kappa \ll 1\)). The results of weak lensing are a magnifcation and shape change less identifiable for a single object when compared to strong lensing.
+	
+	
+	Micro lensing is when a not very massive lens like a star -rather than a galaxy- is close to directly between the observers line of sight to the object.
+
+	In the case of Strong and Micro lensing, these classifications are relatively rare compared to weak lensing observations because the chance alignment along a line of sight is the main requirement as we can see from our definition of the critical surface mass density. This results in weak lensing objects being the most statistically abdunent<label for="sn-1" class="sidenote-toggle sidenote-number"></label>
+  <input type="checkbox" id="sn-1" class="sidenote-toggle" />
+  <span class="sidenote">This does not mean it has the highest signal to noise per observation, rather that it is the most common in terms of how often we observe it.</span> observation when it comes to understanding the distribution of mass in the universe.
+
+
+<h2>Weak Gravitational Lensing</h2>
+
+    Weak lensing analysis is an effort to identify how mass is distributed in our universe, and can help identify the history of expansion in our universe, as well as differentiate between the effects of modified gravity and dark energy.<label for="sn-1" class="sidenote-toggle sidenote-number"></label>
+    <input type="checkbox" id="sn-1" class="sidenote-toggle" />
+    <span class="sidenote">Modelling our universe in GR using a FLRW metric we see that space-like geodesics, and time like geodesics are the same. This is not always true in other metrics so lensing serves to probe the time-like dependence.</span>
+	Observing a galaxy population at a particular redshift through the gravitational field of a lens alters the appearance of the galaxies. The tidal component of the gravitational field distorts the shapes of the observed galaxies, while the magnification caused by the lens 
+	changes their apparent brightness. In the case of weak lensing the lens mapping can be linearized<label for="sn-1" class="sidenote-toggle sidenote-number"></label>
+  <input type="checkbox" id="sn-1" class="sidenote-toggle" />
+  <span class="sidenote">\(\psi\) is the deflection potential and satisfies the Poisson equation \(\nabla^2 \psi(\vec{\theta}) = 2\kappa(\vec{\theta}) \)</span>. 
+	\begin{equation}
+	    \mathcal{A}(\vec{\theta}) = \frac{\partial \vec{\beta}}{\vec{\theta}} = \left(\delta_{i,j} -\frac{\partial^2  \psi(\vec{\theta})}{\partial \theta_i \partial \theta_j} \right)=
+	    \begin{pmatrix}
+    	    1-\kappa-\gamma_1 & -\gamma_2\\
+    	    -\gamma_2& 1-\kappa+\gamma_1
+	    \end{pmatrix}  
+	\end{equation}
+	
+<figure style="align-items: center;"><img src="./Screenshot 2022-04-29 001704.png" alt="" srcset="">
+  <figcaption>Image from<a href="http://events.asiaa.sinica.edu.tw/school/20140210/talk/Schneider_Lecture.pdf">Lectures from Peter Schneider</a>: Figure shows how The matrix \(\mathcal{A}(\vec{\theta})\) changes the image shape of a spherical object to one with an ellipticity defined by some function of a, b, \(\gamma\), and \(\kappa\). </figcaption>
+</figure>
+	<br>
+	Because \(\kappa \ll  1\) we can use the approximation that the ellipticity is equal to the reduced shear<label for="sn-1" class="sidenote-toggle sidenote-number"></label>
+  <input type="checkbox" id="sn-1" class="sidenote-toggle" />
+  <span class="sidenote">The reduced shear relates to shear by \(g = \frac{\gamma}{1-\kappa}\) </span>such that \(\epsilon \approx g \).
+	
+	The local tidal gravitational field for any one galaxy could be identified if we knew the exact shape of the galaxy. These local tidal fields could then be used to reconstruct the mass distribution. We can not assume to know the shape of each galaxy since we know dynamically and through observation that galaxies are not all perfectly spherical. However, if we assume that a local ensemble of galaxies have an average intrinsic ellipticity of 0, meaning their intrinsic ellipticity is randomly distributed, we can sample a collection of galaxies and infer the reduced shear from the average ellipticity of background galaxies since that is a direct measure of the shear induced by foreground mass. 
+	
+	\begin{equation}
+	     \gamma  \approx \langle g \rangle \approx \langle\epsilon \rangle
+	\end{equation}
+
+  <h4>Redshift Dependence</h4>
+  If we are considering that the galaxies are not at the same redshift we need to adjust our average ellipticity equation to account for this. We define a function \(Z(z)\) that depends on \(z_{lens}\) and the Heaviside step function \(H(x)\). With this correction we can get in the weak lensing regime that \(\gamma \approx \frac{\langle \epsilon \rangle}{\langle Z\rangle}\)
+
+    \begin{equation} 
+      Z(z) = \frac{\lim_{z \longrightarrow \infty}\Sigma_{cr}(z_{lens},z)}{\Sigma_{cr}(z_{lens},z)} H(z - z_{lens})
+    \end{equation}
+    <label for="sn-1" class="sidenote-toggle sidenote-number"></label>
+    <input type="checkbox" id="sn-1" class="sidenote-toggle" />
+    <span class="sidenote">The critical density contains how the relative distance changes the strength of the source. The dependence of the lens strength on the deflector redshift implies that the lens signal will become smaller for increasing deflector redshift, so the accuracy gained by redshift information becomes significant when measuring shear from ellipticities. Essentially, we need to assume that not all galaxies in our sample are at the same redshift and instead only assume the lens mass is at a fixed redshift.</span>
+
+    <h4>Intrinsic Alignment</h4>
+    Local groups of galaxies being lensed don't neccessarily have a intrinic average ellipticity of 0. This leads to a correction to our shear in first order that looks like \(\gamma = \gamma_{obs} + \gamma_{I}\)
+<h2>Ways to take observational measurements</h2>
+<h4>Shear</h4>
+    Lensing will cause an observer to see a different ellipticity of a galaxy from it's intrinsic ellipticity. Through observations of many galaxies we can assume a local ensemble will have a average ellipticity of 0. Any deviation from this ellipticity gives us how the mass of the lens is distorting (shearing) these galaxies. 
+
+<h4>Size</h4>
+    Since lensing conserves surface brightness, the magnification can be obtained from the change in galaxy-image sizes at fixed surface brightness. Essentially, for a fixed image size we can locally identify the surface brightness and compare this to exposures of blank fields to determine the local magnification.
+    \begin{equation}
+        \langle \Omega\rangle(I) = \mu  \langle \Omega\rangle_0(I)
+    \end{equation}<label for="sn-1" class="sidenote-toggle sidenote-number"></label>
+    <input type="checkbox" id="sn-1" class="sidenote-toggle" />
+    <span class="sidenote">\(\Omega\) is some solid angle of our fixed image size.</span>
+
+<h4>Number Counts</h4>
+    Magnification can either increase or decrease the local number counts, depending on the shape of the unlensed number-count function. The number counts of faint galaxies are observed to very closely follow a power law over a wide range of fluxes. The ratio of lensed number counts to unlensed number counts of galaxies with a flux greater than \(f\) for a low z lens can be approximated as...
+    \begin{equation}
+        \frac{n(>f)}{n_0(>f)} = \mu^{\alpha-1}
+    \end{equation}
+    This change of number counts caused by the lens is called the magnification bias. If the slope of the source counts is unity, \(\alpha = 1\), there will be no magnification bias. In the weak lensing limit we can obtain a convergence estimate.
+    
+    \begin{equation}
+        \kappa \approx \frac{n(>f)-n_0(>f)}{n_0(>f)}\frac{1}{2(\alpha -1)}
+    \end{equation}
+
+    <h3>Strengths & Weaknesses:</h3>
+<h4 style="text-align: left;">Shear:</h4>
+	<b>Strength:</b> Shear measurement is the only way for which we know precisely what to expect in the absence of lensing<label for="sn-1" class="sidenote-toggle sidenote-number"></label>
+  <input type="checkbox" id="sn-1" class="sidenote-toggle" />
+  <span class="sidenote">Not necessarily true in presence of intrinsic alignment.</span>, whereas the other two methods need to compare the measurements with calibration fields void of lensing. This method also has the best signal to noise by a considerable amount.
+	\begin{equation}
+	    \left(\frac{S}{N}\right)_{shear} = \frac{|\gamma|}{\sigma_{\epsilon}}\sqrt{N_{gal}}
+	\end{equation}
+	<b>Weakness:</b> Observational effects such as atmospheric seeing affect the observable ellipticities, intrinsic alignment of the galaxies is often not such that the average ellipticity is 0 and so this needs to be accounted for in the shear-shear correlation function.
+
+<h4 style="text-align: left;">Size:</h4>
+	<b>Strength:</b> Better signal to noise than number count.
+	\begin{equation}
+	    \left(\frac{S}{N}\right)_{size} = \frac{2\kappa}{\sigma(I)}\sqrt{N_{gal}}
+	\end{equation}
+	<b>Weakness:</b> Observational effects such as atmospheric seeing affect the observable size, and both the number counts and the size measurements (at fixed surface brightness) require accurate photometry.
+<h4 style="text-align: left;">Number Counts:</h4>
+	<b>Strength:</b> Fainter sources are usable,  observational effects such as atmospheric seeing don't affect the observable flux within a designated window much.
+	\begin{equation}
+	     \left(\frac{S}{N}\right)_{counts} = 2\kappa|\alpha - 1|\sqrt{N_{gal}}
+	\end{equation}
+	<b>Weakness:</b> Both the number counts and the size measurements (at fixed surface brightness) require accurate photometry.
+
+<h2>Shear Measurement In Practice</h2>
+      In practice, the galaxy images we can perform shear measurements on have a handful of additional problems that need to be addressed for us to accurately recover shear. Previously mentioned, we can relate the reduced shear to the average ellipticity of a local group of galaxies by \( \langle \mathbf{g} \rangle \approx \langle\ \mathbf{\epsilon} \rangle\). When considering the bias introduced by our observations and our modelling of detector effects we actually have a multiplicative and an additive bias to solve for in our shear measurements. This transforms our equation into one that depends on a multipicative bias "m" and a additive bias "c". 
+
+      \begin{equation}
+        \langle \epsilon \rangle  = (1 + m)\langle \mathbf{g} \rangle + c
+      \end{equation}
+
+      The multiplicative bias comes from things like point spread function (PSF) errors, undersampling, and blending of light from nearby galaxies not resolved by our detector and is impossible to know prior to our analysis. The additive bias can often be known a priori since it is a result of measurement biases that introduce a preffered direction in the image plane.
+
+<h4>Metacalibration</h4>
+      Metacalibration is a general method developed to account for the biases introduced in our observations of galaxy ellipticities and allows for us to better recover the shear from the measured ellipticities of galaxies. The multi-step process is as follows.
+
+      <ol style="text-align: left;">
+        <li>Deconvolve the PSF from the galaxy images.</li>
+        <li>Introduce a variety artificial shears to the deconvolved images.</li>
+        <li>Convolve the PSF with the artificially sheared images.</li>
+        <li>Measure the ellipticities of the artificially sheared images.</li>
+        <li>Use the measured ellipticities to create a shear response "R" to apply to the original \(\langle \epsilon\rangle \)</li>
+      </ol>
+
+The shear response is calculated as \(R = \frac{\partial \epsilon}{\partial \mathbf{g}}\) which we can use to take our uncorrected average ellipticity and produce a corrected ellipticity that is equal to the true shear of our local galaxy group. 
+
+\begin{equation} 
+      \langle \mathbf{g} \rangle = \frac{\langle \epsilon \rangle}{\langle R \rangle } 
+\end{equation}
+<br>
+<h4>REFERENCES:</h4>
+<ul style="text-align: left;">
+  <li>Further discussions on Optical Tidal Matrix and how it relates to the FLRW metric and the lens equation: <a href="https://arxiv.org/abs/astro-ph/9912508"> Weak Gravitational Lensing</a> </li>
+  <li>Further discussion on Intrinsic Alignment and how this relates to the shear-shear correlation function: <a href="https://arxiv.org/abs/1407.6990">The Intrinsic Alignment of Galaxies and its Impact on Weak Gravitational Lensing in an Era of Precision Cosmology</a></li>
+  <li>Further discussion on Metacalibration: <a href="https://arxiv.org/abs/1702.02600">Metacalibration: Direct Self-Calibration of Biases in Shear Measurement</a></li>
+</ul>
+        <nav>
+          <a href="index.html"></a>
+          <div class="nav-links">
+            <ul>
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="lensing.html">WEAK LENSING</a></li>
+              <li><a href="cv.html">CV</a></li>
+              <li><a href="contact.html">CONTACT</a></li>
+              <li><a href="research.html">RESEARCH</a></li>
+            </ul>
+          </div>
+        </nav>        
+    </body>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</html>

@@ -1,0 +1,102 @@
+canvas{
+    display: grid;
+    position:absolute;
+  }
+  
+  body{
+    background: hsl(0, 0%, 0%);
+    text-align: center;
+  }
+  nav{
+    display: grid;
+    position:absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+  }
+  .nav-links{
+    text-align: right;
+  }
+  .nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+  }
+  .nav-links ul li a{
+    color:rgb(235, 201, 12);
+    text-decoration: none;
+    font-size: 16px;
+  }
+  .nav-links ul li::after{
+    content: '';
+    width:0%;
+    height:3px;
+    background: rgb(235, 201, 12);
+    display:block;
+    margin:auto;
+    transition: .3s;
+  }
+  .nav-links ul li:hover::after{
+    width:100%;
+  }
+
+  
+  canvas#dst:hover {
+      
+      cursor: none;
+  }
+  
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Style the container/contact section */
+  .container {
+    border-radius: 50px;
+    background-color: #a1a1a1;
+    padding: 50px;
+  }
+  
+  /* Create two columns that float next to eachother */
+  .column {
+    float: center;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    width: 50%;
+    margin-top: 6px;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+  
